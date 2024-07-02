@@ -1,0 +1,21 @@
+name: build-react-app
+run-name: ${{ github.actor }} is running the build-react-app pipeline
+on: [push]
+jobs:
+  build-react-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: npm install
+        run: npm install
+
+      - name: list the directories
+        run: ls -lrt
+
+      - name: npm run build
+        run: npm run build
+
+      - name: list the directories
+        run: ls -lrt
